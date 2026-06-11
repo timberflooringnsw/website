@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Halych Holding — expert timber flooring supply and installation across NSW since 2005. Hardwood, engineered, hybrid, laminate and bamboo flooring. Free on-site quotes." />
+  <meta name="keywords" content="timber flooring NSW, hardwood flooring installation Sydney, engineered flooring NSW, flooring supply installation, floor sanding NSW" />
+  <!-- <meta name="robots" content="index, follow" /> -->
+  <meta name="robots" content="noindex, nofollow" />
+  <meta property="og:title" content="Halych Holding — Timber Flooring NSW" />
+  <meta property="og:description" content="Family-owned flooring specialists since 2005. Supply, installation, sanding & repair across NSW." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://allflooringnsw.com.au" />
+  <title>Halych Holding — Timber Flooring Supply & Installation NSW</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            walnut:  '#1C1410',
+            cream:   '#F5EFE4',
+            amber:   '#C8873A',
+            sage:    '#6B7B6E',
+            card:    '#E8DDD0',
+            mid:     '#2E2018',
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            body:    ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #F5EFE4; color: #1C1410; }
+
+    /* Wood grain SVG overlay */
+    .grain-overlay {
+      position: absolute; inset: 0; pointer-events: none; overflow: hidden; opacity: 0.07;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23grain)' opacity='1'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+    .grain-lines {
+      position: absolute; inset: 0; pointer-events: none;
+      background: repeating-linear-gradient(
+        92deg,
+        transparent,
+        transparent 18px,
+        rgba(255,255,255,0.015) 18px,
+        rgba(255,255,255,0.015) 19px
+      );
+    }
+
+    /* Nav */
+    nav { transition: background 0.3s, box-shadow 0.3s; }
+    nav.scrolled { background: #1C1410 !important; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+    .nav-link { position: relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#C8873A; transition: width 0.3s; }
+    .nav-link:hover::after { width:100%; }
+
+    /* Business hours badge */
+    .status-dot { width:8px; height:8px; border-radius:50%; display:inline-block; }
+    .status-open  { background:#4ade80; box-shadow:0 0 0 3px rgba(74,222,128,0.25); animation: pulse-green 2s infinite; }
+    .status-closed { background:#f87171; box-shadow:0 0 0 3px rgba(248,113,113,0.25); }
+    @keyframes pulse-green { 0%,100%{ box-shadow:0 0 0 3px rgba(74,222,128,0.25);} 50%{ box-shadow:0 0 0 6px rgba(74,222,128,0.08);} }
+
+    /* Buttons */
+    .btn-primary {
+      background: #C8873A; color: #fff; padding: 0.75rem 2rem; border-radius: 9999px;
+      font-weight: 600; font-size: 1rem; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
+      box-shadow: 0 4px 15px rgba(200,135,58,0.35);
+    }
+    .btn-primary:hover { background: #b5762e; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(200,135,58,0.45); }
+    .btn-secondary {
+      background: transparent; color: #F5EFE4; padding: 0.75rem 2rem; border-radius: 9999px;
+      font-weight: 500; font-size: 1rem; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
+      border: 2px solid rgba(245,239,228,0.4);
+    }
+    .btn-secondary:hover { border-color: #F5EFE4; background: rgba(245,239,228,0.1); }
+    .btn-dark {
+      background: #1C1410; color: #F5EFE4; padding: 0.75rem 2rem; border-radius: 9999px;
+      font-weight: 600; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-dark:hover { background: #2E2018; transform: translateY(-1px); }
+
+    /* Cards */
+    .service-card {
+      background: #E8DDD0; border-radius: 1rem; padding: 2rem; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(28,20,16,0.12); }
+    .service-icon { width:52px; height:52px; background: #C8873A; border-radius: 0.75rem; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; }
+
+    /* Calculator */
+    .calc-step { display: none; }
+    .calc-step.active { display: block; }
+    .option-btn {
+      border: 2px solid #E8DDD0; background: white; border-radius: 0.75rem; padding: 1rem;
+      cursor: pointer; transition: all 0.2s; text-align: left; width: 100%;
+    }
+    .option-btn:hover { border-color: #C8873A; background: #fdf8f3; }
+    .option-btn.selected { border-color: #C8873A; background: #fdf8f3; box-shadow: 0 0 0 3px rgba(200,135,58,0.15); }
+    .calc-progress-bar { height: 4px; background: #E8DDD0; border-radius: 9999px; overflow: hidden; }
+    .calc-progress-fill { height: 100%; background: #C8873A; border-radius: 9999px; transition: width 0.4s ease; }
+
+    /* Review stars */
+    .star { color: #f59e0b; }
+
+    /* Photo grid */
+    .photo-item { overflow: hidden; border-radius: 0.75rem; aspect-ratio: 4/3; background: #E8DDD0; position: relative; }
+    .photo-item img { width:100%; height:100%; object-fit:cover; transition: transform 0.4s; }
+    .photo-item:hover img { transform: scale(1.05); }
+
+    /* Section fade-in */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    /* Scroll to top */
+    #scrollTop { position:fixed; bottom:1.5rem; right:1.5rem; z-index:50; opacity:0; pointer-events:none; transition: opacity 0.3s; }
+    #scrollTop.show { opacity:1; pointer-events:auto; }
+
+    /* Mobile menu */
+    #mobileMenu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    #mobileMenu.open { max-height: 400px; }
+
+    input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; }
+    input[type=range] { accent-color: #C8873A; }
+  </style>
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Halych Holding Pty Ltd",
+    "alternateName": "HH Timber Floors",
+    "description": "Family-owned flooring specialists since 2005. Supply and installation of hardwood, engineered, hybrid, laminate and bamboo flooring across NSW. Services include floor sanding, coating, decking and stair installation.",
+    "url": "https://allflooringnsw.com.au",
+    "telephone": "+61413258185",
+    "email": "nick@hhtimberfloors.com.au",
+    "foundingDate": "2005",
+    "areaServed": {
+      "@type": "State",
+      "name": "New South Wales",
+      "addressCountry": "AU"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "NSW",
+      "addressCountry": "AU"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "14:00" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Flooring Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hardwood Flooring Supply & Installation" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Engineered Timber Flooring" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hybrid & Laminate Flooring" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Floor Sanding & Coating" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Old Floor Removal" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Stair & Decking Installation" } }
+      ]
+    },
+    "identifier": { "@type": "PropertyValue", "name": "ABN", "value": "YOUR ABN HERE" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What types of flooring do you supply and install?", "acceptedAnswer": { "@type": "Answer", "text": "We supply and install hardwood, engineered timber, hybrid, laminate, bamboo flooring, as well as decking and stairs across NSW." } },
+      { "@type": "Question", "name": "Do you service all of NSW?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we service Sydney and surrounding NSW regions including Parramatta, Liverpool, Campbelltown, Penrith, and beyond." } },
+      { "@type": "Question", "name": "Do you offer free quotes?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we offer free on-site quotes. Contact us by phone or text to arrange a convenient time." } },
+      { "@type": "Question", "name": "Do you remove old flooring before installation?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we offer complete old floor removal and subfloor preparation as part of our installation service." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- ═══════════════════════════ NAVBAR ═══════════════════════════ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-transparent">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16 sm:h-20">
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-2 group" aria-label="Halych Holding Home">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:#C8873A">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="10" width="4" height="8" rx="1" fill="white"/><rect x="8" y="6" width="4" height="12" rx="1" fill="white"/><rect x="14" y="2" width="4" height="16" rx="1" fill="white"/></svg>
+        </div>
+        <div>
+          <div class="font-display text-cream font-bold text-base leading-tight">Halych Holding</div>
+          <div class="text-xs text-amber font-body" style="font-size:10px;letter-spacing:0.08em">TIMBER FLOORS NSW</div>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#about"    class="nav-link text-sm font-body text-cream/80 hover:text-cream transition-colors">About</a>
+        <a href="#services" class="nav-link text-sm font-body text-cream/80 hover:text-cream transition-colors">Services</a>
+        <a href="#estimator" class="nav-link text-sm font-body text-cream/80 hover:text-cream transition-colors">Estimator</a>
+        <a href="#gallery"  class="nav-link text-sm font-body text-cream/80 hover:text-cream transition-colors">Gallery</a>
+        <a href="#reviews"  class="nav-link text-sm font-body text-cream/80 hover:text-cream transition-colors">Reviews</a>
+        <a href="#faq"      class="nav-link text-sm font-body text-cream/80 hover:text-cream transition-colors">FAQ</a>
+      </div>
+
+      <!-- Status + CTA -->
+      <div class="hidden md:flex items-center gap-4">
+        <div id="statusBadge" class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
+          <span class="status-dot" id="statusDot"></span>
+          <span class="text-xs font-body text-cream/90" id="statusText">Checking hours…</span>
+        </div>
+        <a href="tel:0413258185" class="btn-primary text-sm px-4 py-2">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 11.23a19.79 19.79 0 01-3.07-8.67A2 2 0 012.31 2.5h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 10.1a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="hamburger" class="md:hidden text-cream p-2" aria-label="Open menu" aria-expanded="false">
+        <svg id="hamIcon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+      <div class="pb-4 flex flex-col gap-2">
+        <a href="#about"    class="text-cream/80 py-2 px-2 hover:text-amber transition-colors font-body">About</a>
+        <a href="#services" class="text-cream/80 py-2 px-2 hover:text-amber transition-colors font-body">Services</a>
+        <a href="#estimator" class="text-cream/80 py-2 px-2 hover:text-amber transition-colors font-body">Estimator</a>
+        <a href="#gallery"  class="text-cream/80 py-2 px-2 hover:text-amber transition-colors font-body">Gallery</a>
+        <a href="#reviews"  class="text-cream/80 py-2 px-2 hover:text-amber transition-colors font-body">Reviews</a>
+        <a href="#faq"      class="text-cream/80 py-2 px-2 hover:text-amber transition-colors font-body">FAQ</a>
+        <div class="flex items-center gap-3 pt-2">
+          <div id="statusBadgeMobile" class="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-full">
+            <span class="status-dot" id="statusDotMobile"></span>
+            <span class="text-xs font-body text-cream/90" id="statusTextMobile">…</span>
+          </div>
+          <a href="tel:0413258185" class="btn-primary text-sm px-4 py-2">Call Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section id="home" style="background:#1C1410; min-height:100vh; position:relative; display:flex; align-items:center;" aria-label="Hero">
+  <div class="grain-overlay"></div>
+  <div class="grain-lines"></div>
+
+  <!-- Decorative timber plank lines -->
+  <div style="position:absolute;inset:0;pointer-events:none;overflow:hidden">
+    <div style="position:absolute;top:0;right:0;width:45%;height:100%;background:linear-gradient(92deg,transparent,rgba(200,135,58,0.04));transform:skewX(-6deg) translateX(10%)"></div>
+    <div style="position:absolute;bottom:-2px;left:0;right:0;height:120px;background:linear-gradient(to top,#F5EFE4,transparent)"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-32 sm:py-40 relative z-10 w-full">
+    <div class="max-w-2xl">
+      <div class="inline-flex items-center gap-2 bg-amber/15 border border-amber/30 text-amber text-xs font-body font-medium px-4 py-1.5 rounded-full mb-6" style="letter-spacing:0.06em">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="5"/></svg>
+        FAMILY BUSINESS · SINCE 2005
+      </div>
+
+      <h1 class="font-display text-cream mb-6" style="font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.1;font-weight:700">
+        Beautiful Floors,<br/>
+        <span style="color:#C8873A">Expertly Laid.</span>
+      </h1>
+
+      <p class="font-body text-cream/70 text-lg mb-10 leading-relaxed max-w-xl">
+        From the first plank to the final coat — we supply and install hardwood, engineered, hybrid, laminate and bamboo flooring across New South Wales. Free on-site quotes.
+      </p>
+
+      <div class="flex flex-wrap gap-4 items-center">
+        <a href="tel:0413258185" class="btn-primary text-base">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 11.23a19.79 19.79 0 01-3.07-8.67A2 2 0 012.31 2.5h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 10.1a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          Hire Us
+        </a>
+        <a href="sms:0413258185?body=Hi%20Nick%2C%20I%27d%20like%20a%20flooring%20quote%20please." class="btn-secondary text-base">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          Text Us
+        </a>
+        <a href="#estimator" class="font-body text-cream/60 hover:text-amber transition-colors text-sm flex items-center gap-1">
+          Get a rough estimate
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Stats row -->
+      <div class="flex flex-wrap gap-8 mt-14 pt-10 border-t border-white/10">
+        <div>
+          <div class="font-display text-amber text-3xl font-bold">20+</div>
+          <div class="font-body text-cream/50 text-sm mt-0.5">Years experience</div>
+        </div>
+        <div>
+          <div class="font-display text-amber text-3xl font-bold">500+</div>
+          <div class="font-body text-cream/50 text-sm mt-0.5">Homes transformed</div>
+        </div>
+        <div>
+          <div class="font-display text-amber text-3xl font-bold">6</div>
+          <div class="font-body text-cream/50 text-sm mt-0.5">Flooring types</div>
+        </div>
+        <div>
+          <div class="font-display text-amber text-3xl font-bold">NSW</div>
+          <div class="font-body text-cream/50 text-sm mt-0.5">Wide coverage</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ ABOUT ═══════════════════════════ -->
+<section id="about" class="py-20 sm:py-28 bg-cream fade-in" aria-labelledby="about-heading">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-block bg-amber/15 text-amber text-xs font-body font-semibold px-3 py-1 rounded-full mb-4" style="letter-spacing:0.08em">OUR STORY</div>
+        <h2 id="about-heading" class="font-display text-walnut mb-6" style="font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.2;font-weight:700">
+          A Family Passion<br/>For Perfect Floors
+        </h2>
+        <p class="font-body text-walnut/70 leading-relaxed mb-5">
+          Halych Holding was founded in 2005 from a genuine love of timber flooring — and that love shows in every job we complete. What started as a small family operation has grown into one of NSW's most trusted flooring specialists, without ever losing the personal care that comes with family ownership.
+        </p>
+        <p class="font-body text-walnut/70 leading-relaxed mb-8">
+          We believe a beautiful floor changes how a home feels — it grounds a space, adds warmth, and outlasts every trend. We compete against the large corporations by doing one thing better: genuinely caring about the outcome for each client.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <div class="flex items-center gap-2 text-walnut/70 text-sm font-body">
+            <svg class="text-amber flex-shrink-0" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Licensed & insured
+          </div>
+          <div class="flex items-center gap-2 text-walnut/70 text-sm font-body">
+            <svg class="text-amber flex-shrink-0" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Free on-site quotes
+          </div>
+          <div class="flex items-center gap-2 text-walnut/70 text-sm font-body">
+            <svg class="text-amber flex-shrink-0" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Supply + installation
+          </div>
+          <div class="flex items-center gap-2 text-walnut/70 text-sm font-body">
+            <svg class="text-amber flex-shrink-0" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            NSW-wide service
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <div style="background:#E8DDD0;border-radius:1.25rem;padding:2.5rem;position:relative;overflow:hidden">
+          <div style="position:absolute;top:0;right:0;width:120px;height:120px;background:rgba(200,135,58,0.1);border-radius:0 1.25rem 0 120px"></div>
+          <div class="grid grid-cols-2 gap-4 relative z-10">
+            <div style="background:white;border-radius:0.875rem;padding:1.5rem">
+              <div class="font-display text-amber text-3xl font-bold mb-1">2005</div>
+              <div class="font-body text-walnut/60 text-sm">Year founded</div>
+            </div>
+            <div style="background:#1C1410;border-radius:0.875rem;padding:1.5rem">
+              <div class="font-display text-amber text-3xl font-bold mb-1">100%</div>
+              <div class="font-body text-cream/60 text-sm">Family owned</div>
+            </div>
+            <div style="background:#1C1410;border-radius:0.875rem;padding:1.5rem">
+              <div class="font-display text-amber text-3xl font-bold mb-1">NSW</div>
+              <div class="font-body text-cream/60 text-sm">Full coverage</div>
+            </div>
+            <div style="background:white;border-radius:0.875rem;padding:1.5rem">
+              <div class="font-display text-amber text-3xl font-bold mb-1">★ 4.9</div>
+              <div class="font-body text-walnut/60 text-sm">Google rating</div>
+            </div>
+          </div>
+          <div class="mt-4 p-4 rounded-xl font-body text-walnut/70 text-sm italic relative z-10" style="background:white">
+            "We want to compete against large corporations by providing better service and better quality."
+            <div class="font-semibold text-walnut mt-1 not-italic">— Nick, Founder</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ SERVICES ═══════════════════════════ -->
+<section id="services" style="background:#2E2018;" class="py-20 sm:py-28 fade-in" aria-labelledby="services-heading">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-14">
+      <div class="inline-block bg-amber/15 text-amber text-xs font-body font-semibold px-3 py-1 rounded-full mb-4" style="letter-spacing:0.08em">WHAT WE DO</div>
+      <h2 id="services-heading" class="font-display text-cream mb-4" style="font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700">
+        The Complete Flooring Package
+      </h2>
+      <p class="font-body text-cream/60 max-w-xl mx-auto">From sourcing quality materials to the final coat of finish — we handle every step so you don't have to.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <article class="service-card" aria-label="Flooring Supply">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="white" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        </div>
+        <h3 class="font-display text-walnut text-xl font-bold mb-2">Flooring Supply</h3>
+        <p class="font-body text-walnut/65 text-sm leading-relaxed mb-3">Hardwood, engineered, hybrid, laminate, bamboo — we source quality materials at competitive prices and bring them to your door.</p>
+        <div class="flex flex-wrap gap-1 mt-auto">
+          <span class="text-xs bg-amber/15 text-amber px-2 py-0.5 rounded-full font-body">Hardwood</span>
+          <span class="text-xs bg-amber/15 text-amber px-2 py-0.5 rounded-full font-body">Engineered</span>
+          <span class="text-xs bg-amber/15 text-amber px-2 py-0.5 rounded-full font-body">Hybrid</span>
+          <span class="text-xs bg-amber/15 text-amber px-2 py-0.5 rounded-full font-body">Laminate</span>
+        </div>
+      </article>
+
+      <article class="service-card" aria-label="Professional Installation">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="white" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3 class="font-display text-walnut text-xl font-bold mb-2">Professional Installation</h3>
+        <p class="font-body text-walnut/65 text-sm leading-relaxed mb-3">Nail-down, glue-down, floating — we install every flooring type to manufacturer spec, with clean edges and no shortcuts.</p>
+        <div class="flex flex-wrap gap-1 mt-auto">
+          <span class="text-xs bg-amber/15 text-amber px-2 py-0.5 rounded-full font-body">Solid timber</span>
+          <span class="text-xs bg-amber/15 text-amber px-2 py-0.5 rounded-full font-body">Floating</span>
+          <span class="text-xs bg-amber/15 text-amber px-2 py-0.5 rounded-full font-body">Parquetry</span>
+        </div>
+      </article>
+
+      <article class="service-card" aria-label="Floor Sanding & Coating">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="white" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12s1.5 3 4 3 4-3 4-3"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <h3 class="font-display text-walnut text-xl font-bold mb-2">Sanding & Coating</h3>
+        <p class="font-body text-walnut/65 text-sm leading-relaxed mb-3">Bring tired floors back to life. Our sanding and re-coating service removes scratches, stains and years of wear — at a fraction of replacement cost.</p>
+        <div class="flex flex-wrap gap-1 mt-auto">
+          <span class="text-xs bg-amber/15 text-amber px-2 py-0.5 rounded-full font-body">Sanding</span>
+          <span class="text-xs bg-amber/15 text-amber px-2 py-0.5 rounded-full font-body">Staining</span>
+          <span class="text-xs bg-amber/15 text-amber px-2 py-0.5 rounded-full font-body">Polyurethane</span>
+        </div>
+      </article>
+
+      <article class="service-card" aria-label="Old Floor Removal">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="white" stroke-width="1.8" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+        </div>
+        <h3 class="font-display text-walnut text-xl font-bold mb-2">Old Floor Removal</h3>
+        <p class="font-body text-walnut/65 text-sm leading-relaxed mb-3">We handle full removal of existing carpet, tiles or timber flooring, and leave the subfloor clean and ready for your new installation.</p>
+        <div class="flex flex-wrap gap-1 mt-auto">
+          <span class="text-xs bg-amber/15 text-amber px-2 py-0.5 rounded-full font-body">Carpet</span>
+          <span class="text-xs bg-amber/15 text-amber px-2 py-0.5 rounded-full font-body">Tiles</span>
+          <span class="text-xs bg-amber/15 text-amber px-2 py-0.5 rounded-full font-body">Old timber</span>
+        </div>
+      </article>
+
+      <article class="service-card" aria-label="Subfloor Preparation">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="white" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3 class="font-display text-walnut text-xl font-bold mb-2">Subfloor Preparation</h3>
+        <p class="font-body text-walnut/65 text-sm leading-relaxed mb-3">A level, solid subfloor is the foundation of a great result. We assess, level and repair subfloors so your new floor performs for decades.</p>
+        <div class="flex flex-wrap gap-1 mt-auto">
+          <span class="text-xs bg-amber/15 text-amber px-2 py-0.5 rounded-full font-body">Levelling</span>
+          <span class="text-xs bg-amber/15 text-amber px-2 py-0.5 rounded-full font-body">Repair</span>
+          <span class="text-xs bg-amber/15 text-amber px-2 py-0.5 rounded-full font-body">Assessment</span>
+        </div>
+      </article>
+
+      <article class="service-card" aria-label="Stairs & Decking">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="white" stroke-width="1.8" viewBox="0 0 24 24"><polyline points="4 20 4 14 10 14 10 8 16 8 16 2 20 2 20 20 4 20"/></svg>
+        </div>
+        <h3 class="font-display text-walnut text-xl font-bold mb-2">Stairs & Decking</h3>
+        <p class="font-body text-walnut/65 text-sm leading-relaxed mb-3">Timber stair treads, solid thread steps, and outdoor decking — installed with the same precision we bring to every floor in your home.</p>
+        <div class="flex flex-wrap gap-1 mt-auto">
+          <span class="text-xs bg-amber/15 text-amber px-2 py-0.5 rounded-full font-body">Stair treads</span>
+          <span class="text-xs bg-amber/15 text-amber px-2 py-0.5 rounded-full font-body">Decking</span>
+          <span class="text-xs bg-amber/15 text-amber px-2 py-0.5 rounded-full font-body">Steps</span>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="text-center mt-10">
+      <a href="#estimator" class="btn-primary">Get a free estimate →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ ESTIMATOR ═══════════════════════════ -->
+<section id="estimator" class="py-20 sm:py-28 bg-cream fade-in" aria-labelledby="estimator-heading">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10">
+      <div class="inline-block bg-amber/15 text-amber text-xs font-body font-semibold px-3 py-1 rounded-full mb-4" style="letter-spacing:0.08em">ROUGH ESTIMATOR</div>
+      <h2 id="estimator-heading" class="font-display text-walnut mb-3" style="font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700">Find Your Perfect Floor</h2>
+      <p class="font-body text-walnut/60">Answer a few questions for a ballpark guide — all prices are estimates only. Actual quotes are done on-site, free of charge.</p>
+    </div>
+
+    <div style="background:white;border-radius:1.5rem;padding:2rem;box-shadow:0 8px 40px rgba(28,20,16,0.1)">
+      <!-- Progress -->
+      <div class="mb-6">
+        <div class="flex justify-between text-xs font-body text-walnut/50 mb-2">
+          <span id="stepLabel">Step 1 of 5</span>
+          <span id="stepPct">20%</span>
+        </div>
+        <div class="calc-progress-bar">
+          <div class="calc-progress-fill" id="progressFill" style="width:20%"></div>
+        </div>
+      </div>
+
+      <!-- STEP 1: Scratch tolerance -->
+      <div class="calc-step active" id="step1">
+        <h3 class="font-display text-walnut text-xl font-semibold mb-1">How scratch-tolerant does the floor need to be?</h3>
+        <p class="font-body text-walnut/50 text-sm mb-5">Think about pets, kids, furniture movement and daily traffic.</p>
+        <div class="grid sm:grid-cols-3 gap-3">
+          <button class="option-btn" data-key="scratch" data-val="high" onclick="selectOption(this)">
+            <div class="text-2xl mb-2">🐕</div>
+            <div class="font-semibold text-walnut text-sm font-body">Very scratch resistant</div>
+            <div class="text-xs text-walnut/50 mt-1 font-body">Pets, kids, heavy traffic</div>
+          </button>
+          <button class="option-btn" data-key="scratch" data-val="medium" onclick="selectOption(this)">
+            <div class="text-2xl mb-2">🏠</div>
+            <div class="font-semibold text-walnut text-sm font-body">Moderate resistance</div>
+            <div class="text-xs text-walnut/50 mt-1 font-body">Normal family use</div>
+          </button>
+          <button class="option-btn" data-key="scratch" data-val="low" onclick="selectOption(this)">
+            <div class="text-2xl mb-2">👟</div>
+            <div class="font-semibold text-walnut text-sm font-body">Low traffic area</div>
+            <div class="text-xs text-walnut/50 mt-1 font-body">Bedroom, formal lounge</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Area -->
+      <div class="calc-step" id="step2">
+        <h3 class="font-display text-walnut text-xl font-semibold mb-1">What area needs flooring?</h3>
+        <p class="font-body text-walnut/50 text-sm mb-5">Measure length × width for each room. Rough estimates are fine.</p>
+        <div class="mb-5">
+          <label class="font-body text-walnut/70 text-sm font-medium block mb-2">Floor area (m²)</label>
+          <div class="flex items-center gap-3">
+            <input type="range" id="areaSlider" min="10" max="300" value="60" class="flex-1 h-2" oninput="document.getElementById('areaVal').textContent=this.value" />
+            <div class="w-16 text-center font-display text-walnut text-xl font-bold"><span id="areaVal">60</span> m²</div>
+          </div>
+          <div class="flex justify-between text-xs text-walnut/40 font-body mt-1"><span>10 m²</span><span>300 m²</span></div>
+        </div>
+        <div class="border-t border-card pt-5">
+          <label class="flex items-center gap-3 cursor-pointer">
+            <input type="checkbox" id="hasStairs" class="w-4 h-4 accent-amber" />
+            <span class="font-body text-walnut/70 text-sm font-medium">I also need stair treads covered</span>
+          </label>
+          <div id="stairsInput" class="hidden mt-4">
+            <label class="font-body text-walnut/70 text-sm font-medium block mb-2">Number of steps</label>
+            <div class="flex items-center gap-3">
+              <button onclick="changeSteps(-1)" class="w-9 h-9 rounded-full border-2 border-card flex items-center justify-center font-bold text-walnut/60 hover:border-amber transition-colors">−</button>
+              <span id="stepsVal" class="font-display text-walnut text-2xl font-bold w-10 text-center">14</span>
+              <button onclick="changeSteps(1)" class="w-9 h-9 rounded-full border-2 border-card flex items-center justify-center font-bold text-walnut/60 hover:border-amber transition-colors">+</button>
+              <span class="font-body text-walnut/50 text-sm">steps</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3: Preparation -->
+      <div class="calc-step" id="step3">
+        <h3 class="font-display text-walnut text-xl font-semibold mb-1">Does prep work need to be done?</h3>
+        <p class="font-body text-walnut/50 text-sm mb-5">This affects both time and cost of the job.</p>
+        <div class="flex flex-col gap-3">
+          <button class="option-btn" data-key="removal" data-val="none" onclick="selectOption(this)">
+            <div class="flex items-start gap-3">
+              <span class="text-xl">✨</span>
+              <div>
+                <div class="font-semibold text-walnut text-sm font-body">New build / bare subfloor</div>
+                <div class="text-xs text-walnut/50 mt-0.5 font-body">Nothing to remove — ready to go</div>
+              </div>
+            </div>
+          </button>
+          <button class="option-btn" data-key="removal" data-val="carpet" onclick="selectOption(this)">
+            <div class="flex items-start gap-3">
+              <span class="text-xl">🪣</span>
+              <div>
+                <div class="font-semibold text-walnut text-sm font-body">Remove existing carpet</div>
+                <div class="text-xs text-walnut/50 mt-0.5 font-body">Carpet, underlay and tacks need removing</div>
+              </div>
+            </div>
+          </button>
+          <button class="option-btn" data-key="removal" data-val="tiles" onclick="selectOption(this)">
+            <div class="flex items-start gap-3">
+              <span class="text-xl">🔨</span>
+              <div>
+                <div class="font-semibold text-walnut text-sm font-body">Remove tiles or old timber</div>
+                <div class="text-xs text-walnut/50 mt-0.5 font-body">More labour-intensive, subfloor likely needs levelling</div>
+              </div>
+            </div>
+          </button>
+          <button class="option-btn" data-key="removal" data-val="level" onclick="selectOption(this)">
+            <div class="flex items-start gap-3">
+              <span class="text-xl">📐</span>
+              <div>
+                <div class="font-semibold text-walnut text-sm font-body">Subfloor levelling only</div>
+                <div class="text-xs text-walnut/50 mt-0.5 font-body">Floor is bare but uneven and needs grinding or levelling compound</div>
+              </div>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 4: Budget preference -->
+      <div class="calc-step" id="step4">
+        <h3 class="font-display text-walnut text-xl font-semibold mb-1">What's your budget priority?</h3>
+        <p class="font-body text-walnut/50 text-sm mb-5">This helps us recommend the right material tier.</p>
+        <div class="grid sm:grid-cols-3 gap-3">
+          <button class="option-btn" data-key="budget" data-val="economy" onclick="selectOption(this)">
+            <div class="text-2xl mb-2">💰</div>
+            <div class="font-semibold text-walnut text-sm font-body">Best value</div>
+            <div class="text-xs text-walnut/50 mt-1 font-body">Practical and cost-effective</div>
+          </button>
+          <button class="option-btn" data-key="budget" data-val="mid" onclick="selectOption(this)">
+            <div class="text-2xl mb-2">⚖️</div>
+            <div class="font-semibold text-walnut text-sm font-body">Mid-range</div>
+            <div class="text-xs text-walnut/50 mt-1 font-body">Balance of quality and cost</div>
+          </button>
+          <button class="option-btn" data-key="budget" data-val="premium" onclick="selectOption(this)">
+            <div class="text-2xl mb-2">🏆</div>
+            <div class="font-semibold text-walnut text-sm font-body">Premium</div>
+            <div class="text-xs text-walnut/50 mt-1 font-body">Top materials, lasting results</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 5: Results -->
+      <div class="calc-step" id="step5">
+        <h3 class="font-display text-walnut text-xl font-semibold mb-1">Your personalised flooring guide</h3>
+        <p class="font-body text-walnut/50 text-sm mb-5">Based on your answers, here are the best options for your situation.</p>
+        <div id="resultsContainer"></div>
+
+        <!-- Request a call -->
+        <div class="mt-6 p-5 rounded-2xl" style="background:#F5EFE4;border:2px solid #E8DDD0">
+          <h4 class="font-display text-walnut text-lg font-semibold mb-1">Want a proper quote?</h4>
+          <p class="font-body text-walnut/60 text-sm mb-4">Leave your name and number — we'll call you back, usually same day.</p>
+          <div class="flex flex-col sm:flex-row gap-3 mb-3">
+            <input type="text" id="quoteNameInput" placeholder="Your name" class="flex-1 border-2 border-card rounded-xl px-4 py-2.5 font-body text-sm text-walnut focus:border-amber focus:outline-none" />
+            <input type="tel" id="quotePhoneInput" placeholder="Mobile number" class="flex-1 border-2 border-card rounded-xl px-4 py-2.5 font-body text-sm text-walnut focus:border-amber focus:outline-none" />
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <button onclick="requestCallSMS()" class="btn-primary text-sm px-5 py-2.5">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+              Text us your details
+            </button>
+            <button onclick="requestCallEmail()" class="btn-dark text-sm px-5 py-2.5">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2-2-2z" fill="none"/><polyline points="22,6 12,13 2,6"/></svg>
+              Email instead
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nav buttons -->
+      <div class="flex justify-between mt-6 pt-5 border-t border-card" id="calcNav">
+        <button id="prevBtn" onclick="prevStep()" class="btn-dark text-sm px-5 py-2.5 opacity-0 pointer-events-none" aria-disabled="true">← Back</button>
+        <button id="nextBtn" onclick="nextStep()" class="btn-primary text-sm px-5 py-2.5 opacity-50" disabled aria-disabled="true">Next →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ GALLERY ═══════════════════════════ -->
+<section id="gallery" style="background:#2E2018;" class="py-20 sm:py-28 fade-in" aria-labelledby="gallery-heading">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12">
+      <div class="inline-block bg-amber/15 text-amber text-xs font-body font-semibold px-3 py-1 rounded-full mb-4" style="letter-spacing:0.08em">OUR WORK</div>
+      <h2 id="gallery-heading" class="font-display text-cream" style="font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700">Recent Installations</h2>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <!-- Placeholder photo cards with timber-inspired gradient fills -->
+      <div class="photo-item">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#5c3d1e,#8b6340);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem">
+          <svg width="32" height="32" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span class="text-cream/40 text-xs font-body">Spotted Gum · Sydney</span>
+        </div>
+      </div>
+      <div class="photo-item">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#3d2b14,#6b4c2a);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem">
+          <svg width="32" height="32" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span class="text-cream/40 text-xs font-body">Blackbutt · Parramatta</span>
+        </div>
+      </div>
+      <div class="photo-item">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#7a5c32,#c8a06a);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem">
+          <svg width="32" height="32" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span class="text-cream/40 text-xs font-body">Hybrid · Penrith</span>
+        </div>
+      </div>
+      <div class="photo-item">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#4a3520,#9c7248);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem">
+          <svg width="32" height="32" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span class="text-cream/40 text-xs font-body">Engineered Oak · Liverpool</span>
+        </div>
+      </div>
+      <div class="photo-item">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#2c1f0e,#5e4020);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem">
+          <svg width="32" height="32" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span class="text-cream/40 text-xs font-body">Hardwood Stairs · Campbelltown</span>
+        </div>
+      </div>
+      <div class="photo-item">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#6b5030,#b8904a);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem">
+          <svg width="32" height="32" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span class="text-cream/40 text-xs font-body">Decking · Cronulla</span>
+        </div>
+      </div>
+    </div>
+    <p class="text-center text-cream/30 text-xs font-body mt-4">Replace these placeholders with real job photos — before/after shots work best.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ REVIEWS ═══════════════════════════ -->
+<section id="reviews" class="py-20 sm:py-28 bg-cream fade-in" aria-labelledby="reviews-heading">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12">
+      <div class="inline-block bg-amber/15 text-amber text-xs font-body font-semibold px-3 py-1 rounded-full mb-4" style="letter-spacing:0.08em">GOOGLE REVIEWS</div>
+      <h2 id="reviews-heading" class="font-display text-walnut mb-3" style="font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700">What Our Clients Say</h2>
+      <div class="flex items-center justify-center gap-2 mb-2">
+        <span class="star text-xl">★★★★★</span>
+        <span class="font-display text-walnut text-2xl font-bold">4.9</span>
+        <span class="font-body text-walnut/50 text-sm">on Google</span>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <article class="bg-card rounded-2xl p-6" aria-label="Customer review from Sarah M">
+        <div class="flex gap-1 mb-3"><span class="star">★★★★★</span></div>
+        <blockquote class="font-body text-walnut/70 text-sm leading-relaxed mb-4">"Nick and his team did an incredible job on our hardwood floors. The attention to detail was remarkable — you could tell they genuinely cared about the outcome. Would absolutely recommend."</blockquote>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-amber/20 flex items-center justify-center font-display text-amber font-bold text-sm">S</div>
+          <div><div class="font-body font-semibold text-walnut text-sm">Sarah M.</div><div class="font-body text-walnut/40 text-xs">Sydney NSW</div></div>
+          <div class="ml-auto">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          </div>
+        </div>
+      </article>
+
+      <article class="bg-card rounded-2xl p-6" aria-label="Customer review from Michael T">
+        <div class="flex gap-1 mb-3"><span class="star">★★★★★</span></div>
+        <blockquote class="font-body text-walnut/70 text-sm leading-relaxed mb-4">"Used Halych Holding for engineered timber throughout our entire home renovation. Competitive pricing, showed up on time and the result is absolutely beautiful. The family-business feel really shows."</blockquote>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-amber/20 flex items-center justify-center font-display text-amber font-bold text-sm">M</div>
+          <div><div class="font-body font-semibold text-walnut text-sm">Michael T.</div><div class="font-body text-walnut/40 text-xs">Parramatta NSW</div></div>
+          <div class="ml-auto">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          </div>
+        </div>
+      </article>
+
+      <article class="bg-card rounded-2xl p-6" aria-label="Customer review from Anna K">
+        <div class="flex gap-1 mb-3"><span class="star">★★★★★</span></div>
+        <blockquote class="font-body text-walnut/70 text-sm leading-relaxed mb-4">"Had carpet removed and hybrid flooring installed in three bedrooms. Spotless job, they even levelled a section of uneven subfloor I didn't know was an issue. Highly recommend for the whole NSW area."</blockquote>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-amber/20 flex items-center justify-center font-display text-amber font-bold text-sm">A</div>
+          <div><div class="font-body font-semibold text-walnut text-sm">Anna K.</div><div class="font-body text-walnut/40 text-xs">Campbelltown NSW</div></div>
+          <div class="ml-auto">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="text-center mt-8">
+      <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn-dark inline-flex items-center gap-2">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        See all reviews on Google
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FAQ ═══════════════════════════ -->
+<section id="faq" style="background:#2E2018;" class="py-20 sm:py-28 fade-in" aria-labelledby="faq-heading">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12">
+      <div class="inline-block bg-amber/15 text-amber text-xs font-body font-semibold px-3 py-1 rounded-full mb-4" style="letter-spacing:0.08em">FAQ</div>
+      <h2 id="faq-heading" class="font-display text-cream" style="font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700">Common Questions</h2>
+    </div>
+
+    <div class="flex flex-col gap-3" id="faqList">
+      <!-- FAQ items injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ SERVICE AREAS ═══════════════════════════ -->
+<section class="py-16 bg-cream fade-in" aria-label="Service areas">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+    <div class="inline-block bg-amber/15 text-amber text-xs font-body font-semibold px-3 py-1 rounded-full mb-4" style="letter-spacing:0.08em">WHERE WE WORK</div>
+    <h2 class="font-display text-walnut text-2xl font-bold mb-6">Serving All of NSW</h2>
+    <div class="flex flex-wrap justify-center gap-2 text-sm font-body text-walnut/60">
+      <span class="bg-card px-3 py-1.5 rounded-full">Sydney CBD</span>
+      <span class="bg-card px-3 py-1.5 rounded-full">Parramatta</span>
+      <span class="bg-card px-3 py-1.5 rounded-full">Liverpool</span>
+      <span class="bg-card px-3 py-1.5 rounded-full">Campbelltown</span>
+      <span class="bg-card px-3 py-1.5 rounded-full">Penrith</span>
+      <span class="bg-card px-3 py-1.5 rounded-full">Blacktown</span>
+      <span class="bg-card px-3 py-1.5 rounded-full">Cronulla</span>
+      <span class="bg-card px-3 py-1.5 rounded-full">Sutherland</span>
+      <span class="bg-card px-3 py-1.5 rounded-full">Castle Hill</span>
+      <span class="bg-card px-3 py-1.5 rounded-full">Ryde</span>
+      <span class="bg-card px-3 py-1.5 rounded-full">Bankstown</span>
+      <span class="bg-card px-3 py-1.5 rounded-full">Wollongong</span>
+      <span class="bg-card px-3 py-1.5 rounded-full">Blue Mountains</span>
+      <span class="bg-card px-3 py-1.5 rounded-full">Macquarie Park</span>
+      <span class="bg-card px-3 py-1.5 rounded-full">+ surrounding NSW</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer style="background:#1C1410;" class="py-14" role="contentinfo" aria-label="Footer">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:#C8873A">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="10" width="4" height="8" rx="1" fill="white"/><rect x="8" y="6" width="4" height="12" rx="1" fill="white"/><rect x="14" y="2" width="4" height="16" rx="1" fill="white"/></svg>
+          </div>
+          <div>
+            <div class="font-display text-cream font-bold text-base leading-tight">Halych Holding</div>
+            <div class="text-amber font-body" style="font-size:10px;letter-spacing:0.08em">TIMBER FLOORS NSW</div>
+          </div>
+        </div>
+        <p class="font-body text-cream/50 text-sm leading-relaxed max-w-xs">Family-owned flooring specialists since 2005. Supply and installation of all flooring types across New South Wales.</p>
+        <div class="mt-4 flex gap-3">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-amber transition-colors">
+            <svg width="16" height="16" fill="currentColor" class="text-cream" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-amber transition-colors">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="text-cream" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-body text-cream font-semibold text-sm mb-4" style="letter-spacing:0.06em">SERVICES</h3>
+        <ul class="flex flex-col gap-2">
+          <li><a href="#services" class="font-body text-cream/50 text-sm hover:text-amber transition-colors">Supply & Installation</a></li>
+          <li><a href="#services" class="font-body text-cream/50 text-sm hover:text-amber transition-colors">Floor Sanding & Coating</a></li>
+          <li><a href="#services" class="font-body text-cream/50 text-sm hover:text-amber transition-colors">Old Floor Removal</a></li>
+          <li><a href="#services" class="font-body text-cream/50 text-sm hover:text-amber transition-colors">Subfloor Preparation</a></li>
+          <li><a href="#services" class="font-body text-cream/50 text-sm hover:text-amber transition-colors">Stairs & Decking</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-body text-cream font-semibold text-sm mb-4" style="letter-spacing:0.06em">CONTACT</h3>
+        <ul class="flex flex-col gap-3">
+          <li>
+            <a href="tel:0413258185" class="flex items-center gap-2 font-body text-cream/50 text-sm hover:text-amber transition-colors">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 11.23 19.79 19.79 0 01.33 2.56 2 2 0 012.31.5h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              0413 258 185
+            </a>
+          </li>
+          <li>
+            <a href="mailto:nick@hhtimberfloors.com.au" class="flex items-center gap-2 font-body text-cream/50 text-sm hover:text-amber transition-colors">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2-2-2z" fill="none"/><polyline points="22,6 12,13 2,6"/></svg>
+              nick@hhtimberfloors.com.au
+            </a>
+          </li>
+          <li class="flex items-start gap-2 font-body text-cream/50 text-sm">
+            <svg width="14" height="14" class="mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Mon–Fri 7am–6pm<br/>Sat 8am–2pm
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+      <div class="flex flex-wrap items-center gap-4 text-xs font-body text-cream/30">
+        <span>© 2024 Halych Holding Pty Ltd</span>
+        <span>ABN: <strong class="text-cream/50">XXXXXXXXX</strong></span>
+        <span>All rights reserved</span>
+      </div>
+      <div class="text-xs font-body text-cream/20">
+        Timber flooring supply & installation · NSW Australia
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="w-11 h-11 rounded-full bg-amber text-white flex items-center justify-center shadow-lg hover:bg-amber/80 transition-colors" aria-label="Scroll to top">
+  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script>
+// ── Business hours status ──────────────────────────────────────
+function updateStatus() {
+  const now = new Date();
+  const day = now.getDay(); // 0=Sun,6=Sat
+  const h = now.getHours() + now.getMinutes() / 60;
+  let open = false;
+  if (day >= 1 && day <= 5 && h >= 7 && h < 18) open = true;
+  if (day === 6 && h >= 8 && h < 14) open = true;
+
+  const text = open ? 'Open now' : 'Closed · Call anyway';
+  const cls  = open ? 'status-open' : 'status-closed';
+  ['statusDot','statusDotMobile'].forEach(id => {
+    const el = document.getElementById(id);
+    if(el){ el.className = 'status-dot ' + cls; }
+  });
+  ['statusText','statusTextMobile'].forEach(id => {
+    const el = document.getElementById(id);
+    if(el){ el.textContent = text; }
+  });
+}
+updateStatus();
+
+// ── Nav scroll behaviour ───────────────────────────────────────
+const navbar = document.getElementById('navbar');
+const scrollTopBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) navbar.classList.add('scrolled');
+  else navbar.classList.remove('scrolled');
+  if (window.scrollY > 400) scrollTopBtn.classList.add('show');
+  else scrollTopBtn.classList.remove('show');
+});
+
+// ── Mobile menu ────────────────────────────────────────────────
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', open);
+});
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+});
+
+// ── Fade-in on scroll ──────────────────────────────────────────
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ── Stairs toggle ──────────────────────────────────────────────
+document.getElementById('hasStairs').addEventListener('change', function() {
+  document.getElementById('stairsInput').classList.toggle('hidden', !this.checked);
+});
+let steps = 14;
+function changeSteps(delta) {
+  steps = Math.max(1, Math.min(50, steps + delta));
+  document.getElementById('stepsVal').textContent = steps;
+}
+
+// ── Calculator state ───────────────────────────────────────────
+let currentStep = 1;
+const totalSteps = 5;
+const answers = {};
+
+function selectOption(btn) {
+  const key = btn.dataset.key;
+  document.querySelectorAll(`[data-key="${key}"]`).forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  answers[key] = btn.dataset.val;
+  document.getElementById('nextBtn').disabled = false;
+  document.getElementById('nextBtn').classList.remove('opacity-50');
+}
+
+function updateProgress() {
+  const pct = Math.round((currentStep / totalSteps) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('stepLabel').textContent = `Step ${currentStep} of ${totalSteps}`;
+  document.getElementById('stepPct').textContent = pct + '%';
+
+  const prev = document.getElementById('prevBtn');
+  const next = document.getElementById('nextBtn');
+
+  if (currentStep === 1) { prev.classList.add('opacity-0','pointer-events-none'); }
+  else { prev.classList.remove('opacity-0','pointer-events-none'); }
+
+  if (currentStep === totalSteps) {
+    document.getElementById('calcNav').classList.add('hidden');
+  } else {
+    document.getElementById('calcNav').classList.remove('hidden');
+    const stepKey = ['scratch','area','removal','budget'][currentStep - 1];
+    const hasAnswer = stepKey === 'area' ? true : answers[stepKey];
+    next.disabled = !hasAnswer;
+    next.classList.toggle('opacity-50', !hasAnswer);
+  }
+}
+
+function nextStep() {
+  if (currentStep >= totalSteps) return;
+  document.getElementById('step' + currentStep).classList.remove('active');
+  currentStep++;
+  document.getElementById('step' + currentStep).classList.add('active');
+  if (currentStep === totalSteps) buildResults();
+  updateProgress();
+  document.querySelector('.calc-step.active').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function prevStep() {
+  if (currentStep <= 1) return;
+  document.getElementById('step' + currentStep).classList.remove('active');
+  currentStep--;
+  document.getElementById('step' + currentStep).classList.add('active');
+  updateProgress();
+}
+
+// ── Floor data ─────────────────────────────────────────────────
+const floorTypes = [
+  {
+    name: 'Hybrid Flooring',
+    emoji: '🏆',
+    scratch: ['high','medium'],
+    budget: ['economy','mid','premium'],
+    supplyPsm: [45, 90],
+    installPsm: [30, 45],
+    desc: 'The modern standard for family homes. A rigid core makes it 100% waterproof and extremely hard-wearing. Floats over imperfect subfloors — easier to install and highly durable.',
+    pro: 'Most scratch and water resistant; great for pets & kids',
+    con: 'Can feel slightly less premium than real timber underfoot',
+    datasheet: 'https://www.choicefloorstore.com.au/hybrid-flooring/',
+  },
+  {
+    name: 'Engineered Timber',
+    emoji: '🪵',
+    scratch: ['medium','low'],
+    budget: ['mid','premium'],
+    supplyPsm: [75, 160],
+    installPsm: [35, 55],
+    desc: 'Real timber veneer over a hardwood core — looks and feels like solid timber but is more stable. Can be sanded and refinished once or twice over its lifetime.',
+    pro: 'Authentic timber look and feel; can be refinished',
+    con: 'Not fully waterproof; avoid wet areas',
+    datasheet: 'https://www.choicefloorstore.com.au/engineered-timber-flooring/',
+  },
+  {
+    name: 'Solid Hardwood',
+    emoji: '🌳',
+    scratch: ['medium','low'],
+    budget: ['premium'],
+    supplyPsm: [100, 200],
+    installPsm: [50, 80],
+    desc: 'The traditional choice. Spotted Gum, Blackbutt, Tallowwood — Australian hardwood is among the hardest in the world. Can be sanded and refinished multiple times over decades.',
+    pro: 'Timeless, increases property value; can last 100+ years',
+    con: 'Most expensive; sensitive to moisture and subfloor movement',
+    datasheet: 'https://www.hhtimberfloors.com.au/products/',
+  },
+  {
+    name: 'Laminate Flooring',
+    emoji: '💰',
+    scratch: ['high','medium'],
+    budget: ['economy'],
+    supplyPsm: [20, 45],
+    installPsm: [25, 35],
+    desc: 'A practical, budget-friendly option with a timber look. Modern laminate is durable and easy to clean. Best in low-moisture areas.',
+    pro: 'Most affordable; quick installation; easy maintenance',
+    con: 'Cannot be sanded or refinished; less authentic feel',
+    datasheet: 'https://www.flooringxtra.com.au/laminate-flooring/',
+  },
+  {
+    name: 'Bamboo Flooring',
+    emoji: '🌿',
+    scratch: ['high','medium'],
+    budget: ['economy','mid'],
+    supplyPsm: [35, 75],
+    installPsm: [30, 45],
+    desc: 'Harder than most hardwoods due to its grass-fibre structure. Eco-friendly, stylish, and available in strand-woven form for maximum durability.',
+    pro: 'Sustainable; harder than most timber; modern look',
+    con: 'Sensitive to humidity changes; limited refinishing',
+    datasheet: 'https://www.bamboooz.com.au/',
+  },
+];
+
+function buildResults() {
+  const area = parseInt(document.getElementById('areaSlider').value) || 60;
+  const hasStairs = document.getElementById('hasStairs').checked;
+  const numSteps = hasStairs ? steps : 0;
+  const { scratch = 'medium', removal = 'none', budget = 'mid' } = answers;
+
+  // Removal costs
+  const removalCost = { none: 0, carpet: area * 8, tiles: area * 22, level: area * 18 }[removal] || 0;
+  const stairCost = numSteps * 120;
+
+  // Filter suitable floors
+  const suitable = floorTypes.filter(f =>
+    f.scratch.includes(scratch) && f.budget.includes(budget)
+  );
+  const shown = suitable.length ? suitable : floorTypes.filter(f => f.budget.includes(budget));
+
+  const container = document.getElementById('resultsContainer');
+  container.innerHTML = '';
+
+  // Summary pill
+  const summaryDiv = document.createElement('div');
+  summaryDiv.className = 'mb-4 p-4 rounded-xl text-sm font-body';
+  summaryDiv.style.cssText = 'background:#fdf8f3;border:1.5px solid #E8DDD0';
+  summaryDiv.innerHTML = `<strong class="text-walnut">Your job summary:</strong>
+    <span class="text-walnut/60 ml-1">${area} m² floor area${hasStairs ? ` + ${numSteps} stair steps` : ''}
+    ${removal !== 'none' ? ' · includes removal/prep' : ''}</span>`;
+  container.appendChild(summaryDiv);
+
+  shown.forEach((f, i) => {
+    const supplyLow  = Math.round(f.supplyPsm[0]  * area);
+    const supplyHigh = Math.round(f.supplyPsm[1]  * area);
+    const instLow    = Math.round(f.installPsm[0] * area);
+    const instHigh   = Math.round(f.installPsm[1] * area);
+    const totalLow   = supplyLow  + instLow  + removalCost + stairCost;
+    const totalHigh  = supplyHigh + instHigh + removalCost + stairCost;
+
+    const card = document.createElement('div');
+    card.style.cssText = `border:2px solid ${i===0?'#C8873A':'#E8DDD0'};border-radius:1rem;padding:1.25rem;margin-bottom:0.75rem;background:${i===0?'#fdf8f3':'white'}`;
+    card.innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
+        <div style="display:flex;align-items:center;gap:0.5rem">
+          <span style="font-size:1.4rem">${f.emoji}</span>
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-weight:700;color:#1C1410;font-size:1.05rem">${f.name}</div>
+            ${i===0?'<span style="font-size:10px;background:#C8873A;color:white;padding:1px 8px;border-radius:9999px;font-family:Inter,sans-serif;font-weight:600">BEST MATCH</span>':''}
+          </div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-family:'Playfair Display',serif;font-weight:700;color:#1C1410;font-size:1.2rem">$${totalLow.toLocaleString()} – $${totalHigh.toLocaleString()}</div>
+          <div style="font-size:11px;color:#1C1410;opacity:0.45;font-family:Inter,sans-serif">rough total estimate incl. install</div>
+        </div>
+      </div>
+      <p style="font-size:0.82rem;color:#1C1410;opacity:0.65;font-family:Inter,sans-serif;line-height:1.55;margin-bottom:0.6rem">${f.desc}</p>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;font-size:0.78rem;font-family:Inter,sans-serif;margin-bottom:0.75rem">
+        <div><span style="color:#16a34a;font-weight:600">✓ </span><span style="color:#1C1410;opacity:0.6">${f.pro}</span></div>
+        <div><span style="color:#dc2626;font-weight:600">✗ </span><span style="color:#1C1410;opacity:0.6">${f.con}</span></div>
+      </div>
+      <a href="${f.datasheet}" target="_blank" rel="noopener" style="font-size:0.78rem;color:#C8873A;font-family:Inter,sans-serif;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:0.25rem">
+        View product data & specs →
+      </a>
+    `;
+    container.appendChild(card);
+  });
+
+  // Disclaimer
+  const disc = document.createElement('p');
+  disc.style.cssText = 'font-size:11px;color:#1C1410;opacity:0.35;font-family:Inter,sans-serif;text-align:center;margin-top:0.5rem;line-height:1.5';
+  disc.textContent = 'Estimates are indicative only and vary by product choice, site conditions and access. An on-site quote is always required — and always free.';
+  container.appendChild(disc);
+}
+
+// ── Request call via SMS or Email ──────────────────────────────
+function getContactDetails() {
+  const name  = document.getElementById('quoteNameInput').value.trim() || 'a potential customer';
+  const phone = document.getElementById('quotePhoneInput').value.trim() || 'not provided';
+  const area  = document.getElementById('areaSlider').value;
+  const hasStairs = document.getElementById('hasStairs').checked;
+  const numSteps  = hasStairs ? steps : 0;
+  return { name, phone, area, hasStairs, numSteps };
+}
+
+function requestCallSMS() {
+  const { name, phone, area, hasStairs, numSteps } = getContactDetails();
+  const body = encodeURIComponent(
+    `Hi Nick, my name is ${name} and I'd like a quote for flooring installation.\n` +
+    `Area: ~${area}m²${hasStairs ? `, ${numSteps} stair steps` : ''}.\n` +
+    `Please call me on ${phone}. Thanks!`
+  );
+  window.location.href = `sms:0413258185?body=${body}`;
+}
+
+function requestCallEmail() {
+  const { name, phone, area, hasStairs, numSteps } = getContactDetails();
+  const subject = encodeURIComponent(`Flooring Quote Request — ${name}`);
+  const body = encodeURIComponent(
+    `Hi Nick,\n\nMy name is ${name} and I'd like a free on-site quote for flooring installation.\n\n` +
+    `Details:\n- Floor area: ~${area} m²\n` +
+    (hasStairs ? `- Stair steps: ${numSteps}\n` : '') +
+    `- Best contact number: ${phone}\n\n` +
+    `Please get in touch at your convenience.\n\nThank you`
+  );
+  window.location.href = `mailto:nick@hhtimberfloors.com.au?subject=${subject}&body=${body}`;
+}
+
+// ── FAQ accordion ──────────────────────────────────────────────
+const faqs = [
+  { q: 'What types of flooring do you supply and install?', a: 'We supply and install hardwood (Spotted Gum, Blackbutt, Jarrah and more), engineered timber, hybrid, laminate, and bamboo flooring. We also do parquetry, pre-finished floors, decking, and stair treads.' },
+  { q: 'Do you service all of NSW?', a: 'Yes — we service Sydney and surrounding NSW regions including Parramatta, Liverpool, Campbelltown, Penrith, Blacktown, Cronulla, Wollongong, and beyond. Call us to check your area.' },
+  { q: 'Do you offer free on-site quotes?', a: 'Absolutely. We always quote on-site so we can properly assess the subfloor, measure accurately, and give you a price that reflects the actual job. There\'s no cost or obligation.' },
+  { q: 'Do you remove existing flooring before installation?', a: 'Yes. We offer complete old floor removal — carpet, tiles, or timber — and prepare the subfloor for your new installation. This includes levelling and repair work where needed.' },
+  { q: 'How long does a typical installation take?', a: 'A standard room (20–30 m²) typically takes one day. A full home (100–200 m²) is usually 2–4 days depending on flooring type and prep required. We\'ll give you a timeline when we quote.' },
+  { q: 'Can you sand and refinish my existing timber floors?', a: 'Yes. Floor sanding and coating is one of our core services. It\'s often the most cost-effective way to restore tired or scratched floors without replacing them entirely.' },
+  { q: 'Which flooring is best for pets and kids?', a: 'Hybrid flooring is our top recommendation for pet and kid households — it\'s 100% waterproof, extremely scratch resistant (AC4–AC5 wear ratings), and easy to clean. Bamboo strand-woven is another excellent option.' },
+];
+
+const faqList = document.getElementById('faqList');
+faqs.forEach((item, i) => {
+  const wrap = document.createElement('div');
+  wrap.style.cssText = 'background:rgba(255,255,255,0.05);border-radius:0.875rem;overflow:hidden;border:1px solid rgba(255,255,255,0.08)';
+  wrap.innerHTML = `
+    <button onclick="toggleFaq(${i})" style="width:100%;text-align:left;padding:1.25rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;background:none;border:none;cursor:pointer" aria-expanded="false" id="faqBtn${i}">
+      <span style="font-family:Inter,sans-serif;font-weight:500;color:#F5EFE4;font-size:0.92rem">${item.q}</span>
+      <span id="faqIcon${i}" style="flex-shrink:0;color:#C8873A;font-size:1.2rem;transition:transform 0.3s">+</span>
+    </button>
+    <div id="faqAnswer${i}" style="max-height:0;overflow:hidden;transition:max-height 0.35s ease">
+      <p style="padding:0 1.25rem 1.25rem;font-family:Inter,sans-serif;color:rgba(245,239,228,0.55);font-size:0.875rem;line-height:1.65">${item.a}</p>
+    </div>
+  `;
+  faqList.appendChild(wrap);
+});
+
+function toggleFaq(i) {
+  const answer = document.getElementById('faqAnswer' + i);
+  const icon   = document.getElementById('faqIcon' + i);
+  const btn    = document.getElementById('faqBtn' + i);
+  const isOpen = answer.style.maxHeight !== '0px' && answer.style.maxHeight !== '';
+  // Close all
+  faqs.forEach((_, j) => {
+    document.getElementById('faqAnswer' + j).style.maxHeight = '0px';
+    document.getElementById('faqIcon'   + j).textContent = '+';
+    document.getElementById('faqIcon'   + j).style.transform = 'rotate(0deg)';
+    document.getElementById('faqBtn'    + j).setAttribute('aria-expanded','false');
+  });
+  if (!isOpen) {
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+    icon.textContent = '−';
+    icon.style.transform = 'rotate(0deg)';
+    btn.setAttribute('aria-expanded','true');
+  }
+}
+
+// Init progress
+updateProgress();
+</script>
+</body>
+</html>
