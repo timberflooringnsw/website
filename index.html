@@ -7,11 +7,23 @@
   <meta name="keywords" content="timber flooring NSW, hardwood flooring installation Sydney, engineered flooring NSW, flooring supply installation, floor sanding NSW" />
   <!-- <meta name="robots" content="index, follow" /> -->
   <meta name="robots" content="noindex, nofollow" />
-  <meta property="og:title" content="Halych Holding — Timber Flooring NSW" />
+  <link rel="canonical" href="https://timberflooringnsw.com.au" />
+  <meta property="og:title" content="Halych Holding — Timber Flooring Supply & Installation NSW" />
   <meta property="og:description" content="Family-owned flooring specialists since 2005. Supply, installation, sanding & repair across NSW." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://allflooringnsw.com.au" />
-  <title>Halych Holding — Timber Flooring Supply & Installation NSW</title>
+  <meta property="og:url" content="https://timberflooringnsw.com.au" />
+  <meta property="og:locale" content="en_AU" />
+  <meta property="og:site_name" content="Timber Flooring NSW (Halych Holding)" />
+  <!-- <meta property="og:image" content="https://timberflooringnsw.com.au/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Halych Holding timber flooring installation NSW" /> -->
+  <!-- <meta name="twitter:card" content="summary_large_image" /> -->
+   <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Halych Holding — Timber Flooring NSW" />
+  <meta name="twitter:description" content="Family-owned flooring specialists since 2005. Supply, installation, sanding & repair across NSW." />
+  <!-- <meta name="twitter:image" content="https://timberflooringnsw.com.au/og-image.jpg" /> -->
+  <title>Timber Flooring Supply & Installation NSW (Halych Holding)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -140,7 +152,7 @@
     "name": "Halych Holding Pty Ltd",
     "alternateName": "HH Timber Floors",
     "description": "Family-owned flooring specialists since 2005. Supply and installation of hardwood, engineered, hybrid and laminate flooring across NSW. Services include floor sanding, coating, decking and stair installation.",
-    "url": "https://allflooringnsw.com.au",
+    "url": "https://timberflooringnsw.com.au",
     "telephone": "+61413258185",
     "email": "nick@hhtimberfloors.com.au",
     "foundingDate": "2005",
@@ -427,9 +439,9 @@
 <section id="estimator" style="background:#2E2018;" class="py-20 sm:py-28 fade-in" aria-labelledby="estimator-heading">
   <div class="max-w-3xl mx-auto px-4 sm:px-6">
     <div class="text-center mb-10">
-      <div class="inline-block bg-amber/15 text-amber text-xs font-body font-semibold px-3 py-1 rounded-full mb-4" style="letter-spacing:0.08em">ROUGH ESTIMATOR</div>
+      <div class="inline-block bg-amber/15 text-amber text-xs font-body font-semibold px-3 py-1 rounded-full mb-4" style="letter-spacing:0.08em">SUPPLY &amp; INSTALL ESTIMATOR</div>
       <h2 id="estimator-heading" class="font-display text-cream mb-3" style="font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700">Find Your Perfect Floor</h2>
-      <p class="font-body text-cream/60">Answer a few questions for a ballpark guide — all prices are estimates only. Actual quotes are done on-site, free of charge.</p>
+      <p class="font-body text-cream/60">Get a ballpark estimate for <strong class="text-cream/80">timber flooring supply and installation</strong> only. This tool does not cover sanding, old floor removal or repairs; decking — those services are quoted separately, always free on-site.</p>
     </div>
 
     <div style="background:white;border-radius:1.5rem;padding:2rem;box-shadow:0 8px 40px rgba(28,20,16,0.1)">
@@ -479,7 +491,7 @@
           </div>
           <div class="flex justify-between text-xs text-walnut/40 font-body mt-1"><span>10 m²</span><span>300 m²</span></div>
         </div>
-        <div class="border-t border-card pt-5">
+        <!-- <div class="border-t border-card pt-5">
           <label class="flex items-center gap-3 cursor-pointer">
             <input type="checkbox" id="hasStairs" class="w-4 h-4 accent-amber" />
             <span class="font-body text-walnut/70 text-sm font-medium">I also need stair treads covered</span>
@@ -493,7 +505,7 @@
               <span class="font-body text-walnut/50 text-sm">steps</span>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <!-- STEP 3: Preparation -->
@@ -728,7 +740,6 @@
       <span class="bg-card px-3 py-1.5 rounded-full">Liverpool</span>
       <span class="bg-card px-3 py-1.5 rounded-full">Campbelltown</span>
       <span class="bg-card px-3 py-1.5 rounded-full">Penrith</span>
-      <span class="bg-card px-3 py-1.5 rounded-full">Blacktown</span>
       <span class="bg-card px-3 py-1.5 rounded-full">Cronulla</span>
       <span class="bg-card px-3 py-1.5 rounded-full">Sutherland</span>
       <span class="bg-card px-3 py-1.5 rounded-full">Castle Hill</span>
@@ -951,14 +962,14 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
 // ── Stairs toggle ──────────────────────────────────────────────
-document.getElementById('hasStairs').addEventListener('change', function() {
-  document.getElementById('stairsInput').classList.toggle('hidden', !this.checked);
-});
-let steps = 14;
-function changeSteps(delta) {
-  steps = Math.max(1, Math.min(50, steps + delta));
-  document.getElementById('stepsVal').textContent = steps;
-}
+// document.getElementById('hasStairs').addEventListener('change', function() {
+//   document.getElementById('stairsInput').classList.toggle('hidden', !this.checked);
+// });
+// let steps = 14;
+// function changeSteps(delta) {
+//   steps = Math.max(1, Math.min(50, steps + delta));
+//   document.getElementById('stepsVal').textContent = steps;
+// }
 
 // ── Calculator state ───────────────────────────────────────────
 let currentStep = 1;
@@ -1022,8 +1033,10 @@ const floorTypes = [
     emoji: '🏆',
     scratch: ['high','medium'],
     budget: ['economy','mid','premium'],
-    supplyPsm: [45, 90],
-    installPsm: [30, 45],
+    // supplyPsm: [45, 90],
+    // installPsm: [30, 45],
+    supplyAndInstallPsm: [75, 135],
+    // stairCostPerStep: [120, 200],
     desc: 'The modern standard for family homes. A rigid core makes it 100% waterproof and extremely hard-wearing. Floats over imperfect subfloors — easier to install and highly durable.',
     pro: 'Most scratch and water resistant; great for pets & kids',
     // con: 'Can feel slightly less premium than real timber underfoot',
@@ -1034,8 +1047,10 @@ const floorTypes = [
     emoji: '🪵',
     scratch: ['medium','low'],
     budget: ['mid','premium'],
-    supplyPsm: [75, 160],
-    installPsm: [35, 55],
+    // supplyPsm: [75, 160],
+    // installPsm: [35, 55],
+    supplyAndInstallPsm: [126, 232],
+    // stairCostPerStep: [180, 280],
     desc: 'Real timber veneer over a hardwood core — looks and feels like solid timber but is more stable. Can be sanded and refinished once or twice over its lifetime.',
     pro: 'Authentic timber look and feel; can be refinished',
     // con: 'Not fully waterproof; avoid wet areas',
@@ -1046,8 +1061,10 @@ const floorTypes = [
     emoji: '🌳',
     scratch: ['medium','low'],
     budget: ['premium'],
-    supplyPsm: [100, 200],
-    installPsm: [50, 80],
+    // supplyPsm: [100, 200],
+    // installPsm: [50, 80],
+    supplyAndInstallPsm: [179, 367],
+    // stairCostPerStep: [240, 380],
     desc: 'The traditional choice. Spotted Gum, Blackbutt, Tallowwood — Australian hardwood is among the hardest in the world. Can be sanded and refinished multiple times over decades.',
     pro: 'Timeless, increases property value; can last 100+ years',
     // con: 'Most expensive; sensitive to moisture and subfloor movement',
@@ -1058,8 +1075,10 @@ const floorTypes = [
     emoji: '💰',
     scratch: ['high','medium'],
     budget: ['economy'],
-    supplyPsm: [20, 45],
-    installPsm: [25, 35],
+    // supplyPsm: [20, 45],
+    // installPsm: [25, 35],
+    supplyAndInstallPsm: [71.2, 104.8],
+    // stairCostPerStep: [90, 150],
     desc: 'A practical, budget-friendly option with a timber look. Modern laminate is durable and easy to clean. Best in low-moisture areas.',
     pro: 'Most affordable; quick installation; easy maintenance',
     // con: 'Cannot be sanded or refinished; less authentic feel',
@@ -1069,13 +1088,12 @@ const floorTypes = [
 
 function buildResults() {
   const area = parseInt(document.getElementById('areaSlider').value) || 60;
-  const hasStairs = document.getElementById('hasStairs').checked;
-  const numSteps = hasStairs ? steps : 0;
+  // const hasStairs = document.getElementById('hasStairs').checked;
+  // const numSteps = hasStairs ? steps : 0;
   const { scratch = 'medium', removal = 'none', budget = 'mid' } = answers;
 
   // Removal costs
   const removalCost = { none: 0, carpet: area * 8, tiles: area * 22, level: area * 18 }[removal] || 0;
-  const stairCost = numSteps * 120;
 
   // Filter suitable floors
   const suitable = floorTypes.filter(f =>
@@ -1090,18 +1108,26 @@ function buildResults() {
   const summaryDiv = document.createElement('div');
   summaryDiv.className = 'mb-4 p-4 rounded-xl text-sm font-body';
   summaryDiv.style.cssText = 'background:#fdf8f3;border:1.5px solid #E8DDD0';
+  // summaryDiv.innerHTML = `<strong class="text-walnut">Your job summary:</strong>
+  //   <span class="text-walnut/60 ml-1">${area} m² floor area${hasStairs ? ` + ${numSteps} stair steps` : ''}
+  //   ${removal !== 'none' ? ' · includes removal/prep' : ''}</span>`;
   summaryDiv.innerHTML = `<strong class="text-walnut">Your job summary:</strong>
-    <span class="text-walnut/60 ml-1">${area} m² floor area${hasStairs ? ` + ${numSteps} stair steps` : ''}
+    <span class="text-walnut/60 ml-1">${area} m² floor area
     ${removal !== 'none' ? ' · includes removal/prep' : ''}</span>`;
   container.appendChild(summaryDiv);
 
   shown.forEach((f, i) => {
-    const supplyLow  = Math.round(f.supplyPsm[0]  * area);
-    const supplyHigh = Math.round(f.supplyPsm[1]  * area);
-    const instLow    = Math.round(f.installPsm[0] * area);
-    const instHigh   = Math.round(f.installPsm[1] * area);
-    const totalLow   = supplyLow  + instLow  + removalCost + stairCost;
-    const totalHigh  = supplyHigh + instHigh + removalCost + stairCost;
+    // const supplyLow  = Math.round(f.supplyPsm[0]  * area);
+    // const supplyHigh = Math.round(f.supplyPsm[1]  * area);
+    // const instLow    = Math.round(f.installPsm[0] * area);
+    // const instHigh   = Math.round(f.installPsm[1] * area);
+    // const stairLow  = numSteps * f.stairCostPerStep[0];
+    // const stairHigh = numSteps * f.stairCostPerStep[1];
+    // const totalLow   = supplyLow  + instLow  + removalCost + stairLow;
+    // const totalHigh  = supplyHigh + instHigh + removalCost + stairHigh;
+
+    const totalLow = Math.round(f.supplyAndInstallPsm[0] * area) + removalCost;
+    const totalHigh = Math.round(f.supplyAndInstallPsm[1] * area) + removalCost;
 
     const card = document.createElement('div');
     card.style.cssText = `border:2px solid ${i===0?'#C8873A':'#E8DDD0'};border-radius:1rem;padding:1.25rem;margin-bottom:0.75rem;background:${i===0?'#fdf8f3':'white'}`;
@@ -1145,8 +1171,10 @@ function getContactDetails() {
   const name  = document.getElementById('quoteNameInput').value.trim() || 'a potential customer';
   const phone = document.getElementById('quotePhoneInput').value.trim() || 'not provided';
   const area  = document.getElementById('areaSlider').value;
-  const hasStairs = document.getElementById('hasStairs').checked;
-  const numSteps  = hasStairs ? steps : 0;
+  // const hasStairs = document.getElementById('hasStairs').checked;
+  // const numSteps  = hasStairs ? steps : 0;
+  const hasStairs = false;
+  const numSteps = 0;
   return { name, phone, area, hasStairs, numSteps };
 }
 
@@ -1188,7 +1216,7 @@ function requestCallEmail() {
 // ── FAQ accordion ──────────────────────────────────────────────
 const faqs = [
   { q: 'What types of flooring do you supply and install?', a: 'We supply and install hardwood (Spotted Gum, Blackbutt, Jarrah and more), engineered timber, hybrid, and laminate flooring. We also do parquetry, pre-finished floors, decking, and stair treads.' },
-  { q: 'Do you service all of NSW?', a: 'Yes — we service Sydney and surrounding NSW regions including Parramatta, Liverpool, Campbelltown, Penrith, Blacktown, Cronulla, Wollongong, and beyond. Call us to check your area.' },
+  { q: 'Do you service all of NSW?', a: 'Yes — we service Sydney and surrounding NSW regions including Parramatta, Liverpool, Campbelltown, Penrith, Cronulla, Wollongong, and beyond. Call us to check your area.' },
   { q: 'Do you offer free on-site quotes?', a: 'Absolutely. We always quote on-site so we can properly assess the subfloor, measure accurately, and give you a price that reflects the actual job. There\'s no cost or obligation.' },
   { q: 'Do you remove existing flooring before installation?', a: 'Yes. We offer complete old floor removal — carpet, or timber — and prepare the subfloor for your new installation. This includes levelling and repair work where needed.' },
   { q: 'How long does a typical installation take?', a: 'A standard room (20–30 m²) typically takes one day. A full home (100–200 m²) is usually 2–4 days depending on flooring type and prep required. We\'ll give you a timeline when we quote.' },
