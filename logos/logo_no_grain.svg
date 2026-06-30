@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 530" width="632" height="424">
+  <defs>
+    <clipPath id="monogram">
+      <rect x="80" y="90" width="630" height="30"/>
+      <rect x="80" y="410" width="630" height="30"/>
+      <rect x="80" y="120" width="200" height="70"/>
+      <rect x="510" y="120" width="200" height="70"/>
+      <rect x="370" y="120" width="50" height="100"/>
+      <rect x="230" y="190" width="50" height="150"/>
+      <rect x="510" y="190" width="50" height="150"/>
+      <rect x="370" y="310" width="50" height="100"/>
+      <rect x="80" y="340" width="200" height="70"/>
+      <rect x="510" y="340" width="200" height="70"/>
+    </clipPath>
+  </defs>
+
+  <rect width="790" height="530" fill="#cb421c"/>
+  <rect x="0" y="0" width="790" height="530" clip-path="url(#monogram)" fill="#e7c592"/>
+</svg>
